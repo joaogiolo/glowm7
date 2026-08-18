@@ -44,7 +44,7 @@
   }
   img,video{max-width:100%; display:block;}
   a{color:inherit;}
-  section{position:relative; padding-block:clamp(90px,10vw,180px); overflow:hidden;}
+  section{position:relative; padding-block:clamp(90px,10vw,180px); overflow:hidden; contain:paint;}
   .wrap{max-width:1360px; margin-inline:auto; padding-inline:clamp(20px,5vw,64px); position:relative; z-index:2;}
 
   .eyebrow{
@@ -155,6 +155,8 @@
     background:transparent;
     border-bottom:1px solid transparent;
     transition:background .4s ease, border-color .4s ease, backdrop-filter .4s ease;
+    transform:translateZ(0);
+    will-change:background-color;
   }
   .navbar.scrolled{
     background:rgba(2,3,7,.82);
@@ -940,7 +942,7 @@
       <div class="video-container">
         <div class="video-container__mark" aria-hidden="true">M7</div>
         <video class="video-player" id="glowVideo" controls playsinline preload="metadata">
-          <source src="video%20zariel%20lp.MOV">
+          <source src="assets/videos/glowm7.mp4" type="video/mp4">
           Seu navegador não suporta a reprodução deste vídeo.
         </video>
         <div class="video-placeholder" id="videoPlaceholder">[ VÍDEO GLOW M7 — 9:16 ]</div>
@@ -1026,7 +1028,7 @@
     <div class="results-grid">
       <figure class="transformation reveal-fade">
         <div class="transformation__media">
-          <img src="assets/results/01-transformacao.jpg" alt="Transformação 01 — antes e depois" loading="lazy" decoding="async"
+          <img src="assets/results/01-transformacao.jpg" alt="Transformação 01 — antes e depois" loading="lazy" decoding="async" fetchpriority="low"
                onerror="this.style.display='none'; this.parentElement.querySelector('.transformation__placeholder').style.display='flex';">
           <div class="transformation__placeholder">[ ANTES / DEPOIS — assets/results/01 ]</div>
         </div>
@@ -1035,7 +1037,7 @@
 
       <figure class="transformation reveal-fade">
         <div class="transformation__media">
-          <img src="assets/results/02-transformacao.jpg" alt="Transformação 02 — antes e depois" loading="lazy" decoding="async"
+          <img src="assets/results/02-transformacao.jpg" alt="Transformação 02 — antes e depois" loading="lazy" decoding="async" fetchpriority="low"
                onerror="this.style.display='none'; this.parentElement.querySelector('.transformation__placeholder').style.display='flex';">
           <div class="transformation__placeholder">[ ANTES / DEPOIS — assets/results/02 ]</div>
         </div>
@@ -1044,7 +1046,7 @@
 
       <figure class="transformation reveal-fade">
         <div class="transformation__media">
-          <img src="assets/results/03-transformacao.jpg" alt="Transformação 03 — antes e depois" loading="lazy" decoding="async"
+          <img src="assets/results/03-transformacao.jpg" alt="Transformação 03 — antes e depois" loading="lazy" decoding="async" fetchpriority="low"
                onerror="this.style.display='none'; this.parentElement.querySelector('.transformation__placeholder').style.display='flex';">
           <div class="transformation__placeholder">[ ANTES / DEPOIS — assets/results/03 ]</div>
         </div>
@@ -1102,7 +1104,7 @@
 <section class="mentor">
   <div class="wrap">
     <div class="mentor__media reveal-fade">
-      <img src="assets/mentor/mentor-about.jpg" alt="Mentor GLOW M7" loading="lazy" decoding="async"
+      <img src="assets/mentor/mentor-about.jpg" alt="Mentor GLOW M7" loading="lazy" decoding="async" fetchpriority="low"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="mentor__placeholder" style="display:none;">[ FOTOGRAFIA DO MENTOR — assets/mentor/mentor-about.jpg ]</div>
     </div>
