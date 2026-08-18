@@ -550,27 +550,6 @@
     .results-grid{grid-template-columns:1fr; max-width:420px; margin-inline:auto;}
   }
 
-  /* ============ BANNER ZARIEL — RESPIRO ============ */
-  .brand-banner{
-    height:clamp(400px,60vh,640px);
-    background:var(--navy-deep);
-    display:flex; align-items:center;
-    position:relative;
-    padding-block:0;
-  }
-  .brand-banner__img{
-    position:absolute; inset:0;
-    width:100%; height:100%; object-fit:cover; object-position:center right;
-  }
-  .brand-banner__overlay{
-    position:absolute; inset:0;
-    background:linear-gradient(90deg, rgba(2,3,7,.92) 0%, rgba(2,3,7,.55) 45%, rgba(2,3,7,0) 75%);
-  }
-  .brand-banner__content{position:relative; z-index:2;}
-  .brand-banner__content .eyebrow{margin-bottom:14px;}
-  .brand-banner__content .section-title{font-size:clamp(1.8rem,3.4vw,2.6rem); max-width:420px;}
-  .brand-banner.no-image .brand-banner__overlay{display:none;}
-
   /* ============ PROBLEM ============ */
   .problem{background:var(--navy);}
   .problem__head{margin-bottom:60px;}
@@ -938,19 +917,6 @@
         <span class="premium-cta__icon" aria-hidden="true">↗</span>
       </a>
     </div>
-  </div>
-</section>
-
-<!-- ============ BANNER ZARIEL — RESPIRO ============ -->
-<section class="brand-banner no-image" id="bannerZariel" style="padding-block:0;">
-  <img class="brand-banner__img" id="bannerImg" src="assets/brand/zariel-banner.jpg" alt="" loading="lazy" decoding="async"
-       style="display:none;"
-       onload="this.style.display='block'; this.closest('.brand-banner').classList.remove('no-image');"
-       onerror="this.remove();">
-  <div class="brand-banner__overlay"></div>
-  <div class="wrap brand-banner__content">
-    <div class="eyebrow reveal-line">ZARIEL</div>
-    <h2 class="section-title reveal-line">Transformação. Imagem. Presença.</h2>
   </div>
 </section>
 
