@@ -648,6 +648,147 @@
     color:rgba(225,233,255,.50);
   }
 
+  /* ============ GARANTIA ============ */
+  .guarantee{background:var(--navy);}
+  .guarantee__grid{
+    display:grid; grid-template-columns:1.15fr .85fr; gap:64px; align-items:center;
+  }
+  .guarantee__copy .section-title{margin:16px 0 0; font-size:clamp(2rem,4vw,2.9rem);}
+  .guarantee__copy .section-title span{color:var(--neon-blue-bright);}
+  .guarantee__text{margin-top:24px; display:flex; flex-direction:column; gap:16px; max-width:560px;}
+  .guarantee__text p{font-size:15.5px; line-height:1.7; color:var(--text-secondary);}
+  .guarantee__microcopy{
+    margin-top:22px; max-width:520px;
+    font-size:12.5px; line-height:1.6; color:rgba(225,233,255,.42);
+  }
+  .guarantee__cta{margin-top:32px;}
+
+  .guarantee__stat{position:relative; text-align:center; padding:40px 20px;}
+  .guarantee__stat-glow{
+    position:absolute; inset:-20%; z-index:0;
+    background:radial-gradient(circle, rgba(40,90,255,.18), rgba(5,15,40,.05) 45%, transparent 70%);
+    pointer-events:none;
+  }
+  .guarantee__stat-number{
+    position:relative; z-index:1;
+    font-size:clamp(6rem,11vw,10rem);
+    font-weight:700; line-height:.85; letter-spacing:-.04em;
+    color:var(--neon-blue-bright);
+    text-shadow:0 0 40px rgba(47,107,255,.25);
+  }
+  .guarantee__stat-label{
+    position:relative; z-index:1; margin-top:8px;
+    font-size:13px; font-weight:600; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--text-primary);
+  }
+  .guarantee__stat-note{
+    position:relative; z-index:1; margin:20px auto 0; max-width:280px;
+    font-size:12.5px; line-height:1.6; color:var(--text-secondary);
+  }
+  .guarantee__stat.reveal-fade{transform:translateY(24px) scale(.94);}
+  .guarantee__stat.reveal-fade.is-visible{transform:translateY(0) scale(1);}
+
+  @media (max-width:900px){
+    .guarantee__grid{grid-template-columns:1fr; gap:48px;}
+    .guarantee__stat{order:-1;}
+  }
+
+  /* ============ FAQ ============ */
+  .faq{background:var(--black-soft);}
+  .faq__glow{
+    position:absolute; z-index:0;
+    width:700px; height:700px; max-width:80vw;
+    right:-200px; top:10%;
+    background:radial-gradient(circle, rgba(47,107,255,.14) 0%, transparent 70%);
+    filter:blur(60px);
+    pointer-events:none;
+  }
+  .faq__head{max-width:680px; margin-inline:auto; text-align:center; position:relative; z-index:1;}
+  .faq__head .section-title{margin:16px auto 0; font-size:clamp(2.1rem,4.2vw,3.1rem);}
+  .faq__head .section-title span{color:var(--neon-blue-bright);}
+  .faq__head .lede{margin:20px auto 0; text-align:center;}
+
+  .faq-list{
+    position:relative; z-index:1;
+    max-width:1180px; margin:64px auto 0;
+    border-top:1px solid rgba(79,131,255,.14);
+  }
+  .faq-item{
+    border-bottom:1px solid rgba(79,131,255,.14);
+    transition:border-color .3s ease;
+  }
+  .faq-item:hover{border-bottom-color:rgba(79,131,255,.32);}
+  .faq-item__trigger{
+    width:100%;
+    display:grid;
+    grid-template-columns:44px 1fr 28px;
+    align-items:center;
+    gap:20px;
+    padding:26px 4px;
+    background:none; border:none; margin:0;
+    font-family:inherit; text-align:left; color:inherit;
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .faq-item__trigger:focus-visible{
+    outline:2px solid var(--neon-blue-bright); outline-offset:-2px; border-radius:3px;
+  }
+  .faq-item__num{
+    font-size:14px; font-weight:600; color:var(--neon-blue-bright);
+    font-variant-numeric:tabular-nums;
+    transition:color .3s ease;
+  }
+  .faq-item__question{
+    font-size:17px; font-weight:600; letter-spacing:-.005em; line-height:1.4;
+    color:var(--text-primary);
+    transition:color .3s ease;
+  }
+  .faq-item__icon{
+    font-size:22px; font-weight:300; line-height:1;
+    color:var(--neon-blue-bright);
+    text-align:center;
+    transition:transform .35s var(--ease), color .3s ease;
+  }
+  .faq-item.is-open .faq-item__icon{transform:rotate(45deg);}
+  .faq-item__trigger:hover .faq-item__num{color:var(--neon-blue-soft);}
+  .faq-item__trigger:hover .faq-item__question{color:#fff;}
+
+  .faq-item__panel{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows .4s var(--ease);
+  }
+  .faq-item.is-open .faq-item__panel{grid-template-rows:1fr;}
+  .faq-item__panel-inner{overflow:hidden;}
+  .faq-item__answer{
+    max-width:760px;
+    padding:0 32px 28px calc(44px + 20px);
+    font-size:15px; line-height:1.7;
+    color:var(--text-secondary);
+    opacity:0;
+    transition:opacity .3s ease;
+  }
+  .faq-item.is-open .faq-item__answer{opacity:1; transition:opacity .35s ease .12s;}
+
+  .faq__transition{
+    position:relative; z-index:1;
+    max-width:1180px; margin:80px auto 0;
+    text-align:center;
+  }
+  .faq__transition-eyebrow{color:var(--neon-blue-soft); margin-bottom:16px;}
+  .faq__transition .section-title{
+    font-size:clamp(1.8rem,3.2vw,2.4rem);
+    max-width:560px; margin-inline:auto;
+  }
+  .faq__transition-cta{margin-top:32px; display:flex; justify-content:center;}
+
+  @media (max-width:640px){
+    .faq-item__trigger{grid-template-columns:28px 1fr 22px; align-items:flex-start; gap:14px;}
+    .faq-item__icon{padding-top:2px;}
+    .faq-item__question{font-size:15.5px;}
+    .faq-item__answer{padding-left:calc(28px + 14px); padding-right:4px;}
+  }
+
   /* ============ CTA FINAL ============ */
   .cta-final{
     background:radial-gradient(circle at 50% 100%, rgba(47,107,255,.30), var(--navy-deep) 40%, var(--black) 75%);
@@ -997,7 +1138,7 @@
 
 <!-- ============ DEPOIMENTOS — 100% TEXTUAL ============ -->
 <!-- Textos abaixo (ver array `testimonials` no <script> no fim do arquivo) são PLACEHOLDERS de desenvolvimento e devem ser substituídos por depoimentos reais antes da publicação. -->
-<section class="testimonials" id="faq">
+<section class="testimonials">
   <div class="wrap">
     <div class="testimonials__head">
       <div class="eyebrow reveal-line">DEPOIMENTOS</div>
@@ -1008,6 +1149,65 @@
     </div>
 
     <div class="testimonial-grid" id="testimonialGrid"></div>
+  </div>
+</section>
+
+<!-- ============ GARANTIA ============ -->
+<section class="guarantee" id="garantia">
+  <div class="wrap guarantee__grid">
+    <div class="guarantee__copy">
+      <div class="eyebrow reveal-line">GARANTIA GLOW M7</div>
+      <h2 class="section-title reveal-line">Você tem <span>30 dias</span> para colocar o método à prova.</h2>
+
+      <div class="guarantee__text reveal-fade">
+        <p>Entre no GLOW M7, conheça o método e aplique as orientações propostas durante os primeiros 30 dias.</p>
+        <p>Acreditamos que uma transformação consistente começa com direção e aplicação. Por isso, queremos que você tenha segurança para experimentar o método na prática.</p>
+        <p>Se, dentro desse período, você cumprir os critérios estabelecidos para a garantia, aplicar o método conforme orientado e não perceber os resultados previstos nos termos da oferta, poderá solicitar o reembolso de acordo com as condições da garantia.</p>
+      </div>
+
+      <!-- TODO: DEFINIR TERMOS E CRITÉRIOS OBJETIVOS DA GARANTIA ANTES DA PUBLICAÇÃO. -->
+      <p class="guarantee__microcopy reveal-fade">Consulte os termos e critérios da garantia para verificar as condições, o prazo e o procedimento para solicitação de reembolso.</p>
+
+      <div class="guarantee__cta reveal-fade">
+        <a href="https://pay.cakto.com.br/xghj6j4" class="premium-cta" target="_blank" rel="noopener">
+          <span class="premium-cta__label">QUERO ENTRAR PARA O GLOW M7</span>
+          <span class="premium-cta__icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="guarantee__stat reveal-fade">
+      <div class="guarantee__stat-glow" aria-hidden="true"></div>
+      <div class="guarantee__stat-number">30</div>
+      <div class="guarantee__stat-label">DIAS DE GARANTIA</div>
+      <p class="guarantee__stat-note">Aplicou conforme os critérios e a garantia se aplica ao seu caso? Solicite o reembolso dentro do prazo estabelecido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ — DÚVIDAS FREQUENTES ============ -->
+<section class="faq" id="faq">
+  <div class="section-ghost-title" aria-hidden="true" style="color:rgba(79,131,255,.025); top:60%;">GLOW M7</div>
+  <div class="faq__glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="faq__head">
+      <div class="eyebrow reveal-line">GLOW M7 • DÚVIDAS FREQUENTES</div>
+      <h2 class="section-title reveal-line">Antes de começar, tire suas <span>dúvidas.</span></h2>
+      <p class="lede reveal-fade">Tudo o que você precisa saber sobre o método, o acesso e a aplicação do GLOW M7.</p>
+    </div>
+
+    <div class="faq-list" id="faqList"></div>
+
+    <div class="faq__transition">
+      <div class="eyebrow faq__transition-eyebrow reveal-fade">PRONTO PARA COMEÇAR?</div>
+      <h3 class="section-title reveal-line">Você já sabe como funciona.<br>Agora é hora de aplicar.</h3>
+      <div class="faq__transition-cta reveal-fade">
+        <a href="https://pay.cakto.com.br/xghj6j4" class="premium-cta" target="_blank" rel="noopener">
+          <span class="premium-cta__label">ENTRAR PARA O GLOW M7</span>
+          <span class="premium-cta__icon" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1115,6 +1315,91 @@
       <span class="testimonial-card__author">${t.author}</span>
     </article>
   `).join('');
+
+  // FAQ — accordion
+  const faqs = [
+    {
+      question: "Como vou acessar o GLOW M7 depois da compra?",
+      answer: "Após a confirmação da compra, os dados de acesso ao GLOW M7 serão enviados para o mesmo e-mail informado no momento do pagamento. Por isso, é importante utilizar um endereço de e-mail válido e ao qual você tenha acesso. A liberação é feita após a confirmação do pagamento pela plataforma."
+    },
+    {
+      question: "Como o método GLOW M7 funciona na prática?",
+      answer: "O GLOW M7 foi estruturado para transformar conhecimento em aplicação. Ao longo do curso, você terá acesso a videoaulas, exercícios e orientações práticas, além da construção de hábitos voltados à evolução da sua imagem, estética e presença. A proposta é oferecer uma sequência clara de aplicação, evitando mudanças aleatórias e ajudando você a direcionar seus esforços para os aspectos que realmente fazem sentido para a sua evolução."
+    },
+    {
+      question: "Em quanto tempo posso perceber mudanças?",
+      answer: "O ritmo de evolução varia de acordo com o ponto de partida, a rotina e, principalmente, a consistência de cada aluno. Algumas mudanças de apresentação, estilo e hábitos podem ser percebidas mais rapidamente, enquanto outras exigem continuidade. O objetivo do GLOW M7 é fornecer uma estrutura prática para que você evolua de forma consistente, sem depender de tentativas aleatórias."
+    },
+    {
+      question: "Preciso já entender sobre estética ou imagem masculina?",
+      answer: "Não. O método foi organizado para que você consiga compreender o processo mesmo começando sem conhecimento prévio sobre estética, estilo ou construção de imagem. O conteúdo apresenta uma direção estruturada para que você saiba o que observar, o que priorizar e como aplicar cada etapa à sua realidade."
+    },
+    {
+      question: "O GLOW M7 serve para qualquer homem?",
+      answer: "O método foi desenvolvido para homens que desejam elevar a própria imagem de maneira mais consciente e estratégica. A proposta não é fazer todos seguirem o mesmo padrão estético, mas oferecer princípios e direcionamentos que possam ser adaptados às características, objetivos e identidade de cada aluno."
+    },
+    {
+      question: "Vou precisar gastar muito dinheiro para aplicar o método?",
+      answer: "Não necessariamente. O foco do GLOW M7 não é incentivar compras indiscriminadas, mas ajudar você a tomar decisões melhores sobre a própria imagem. A aplicação pode envolver desde mudanças de hábitos e apresentação até escolhas mais estratégicas de estilo e autocuidado. Cada aluno pode adaptar o processo à própria realidade e ao orçamento disponível."
+    },
+    {
+      question: "Preciso mudar completamente meu estilo?",
+      answer: "Não. O objetivo não é apagar sua identidade ou transformar você em uma cópia de outra pessoa. O GLOW M7 busca ajudar você a identificar pontos de melhoria e construir uma versão mais refinada e coerente da sua própria imagem."
+    },
+    {
+      question: "E se eu não souber por onde começar?",
+      answer: "Esse é justamente um dos objetivos do método. Em vez de consumir informações isoladas e tentar decidir sozinho o que fazer primeiro, você terá uma estrutura organizada para entender os diferentes pilares da sua imagem e avançar de forma mais lógica."
+    },
+    {
+      question: "Consigo aplicar o GLOW M7 mesmo tendo uma rotina corrida?",
+      answer: "Sim. A proposta é integrar os aprendizados à sua rotina de forma progressiva. Você poderá assistir às aulas e aplicar as orientações de acordo com a sua disponibilidade, transformando determinados cuidados e práticas em hábitos consistentes ao longo do processo."
+    },
+    {
+      question: "Por quanto tempo terei acesso ao conteúdo?",
+      answer: "Consulte as condições apresentadas na página de pagamento para verificar o período de acesso correspondente à sua compra."
+    },
+    {
+      question: "Posso assistir pelo celular?",
+      answer: "Sim. O conteúdo pode ser acompanhado por dispositivos compatíveis com a plataforma de acesso, permitindo que você estude de forma mais conveniente pelo celular ou computador."
+    },
+    {
+      question: "Esqueci ou não recebi meu acesso. O que devo fazer?",
+      answer: "Primeiro, verifique a caixa de entrada, a pasta de spam e a aba de promoções do e-mail utilizado na compra. Caso ainda não encontre as informações de acesso, utilize o canal de suporte informado após a compra para solicitar ajuda."
+    }
+  ];
+
+  const faqList = document.getElementById('faqList');
+  faqList.innerHTML = faqs.map((f, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return `
+    <div class="faq-item reveal-fade" data-delay="${i * 70}">
+      <button class="faq-item__trigger" id="faqTrigger${i}" aria-expanded="false" aria-controls="faqPanel${i}">
+        <span class="faq-item__num">${n}</span>
+        <span class="faq-item__question">${f.question}</span>
+        <span class="faq-item__icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-item__panel" id="faqPanel${i}" role="region" aria-labelledby="faqTrigger${i}">
+        <div class="faq-item__panel-inner">
+          <p class="faq-item__answer">${f.answer}</p>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  faqList.addEventListener('click', (e) => {
+    const trigger = e.target.closest('.faq-item__trigger');
+    if (!trigger) return;
+    const item = trigger.closest('.faq-item');
+    const isOpen = item.classList.contains('is-open');
+    faqList.querySelectorAll('.faq-item.is-open').forEach(open => {
+      open.classList.remove('is-open');
+      open.querySelector('.faq-item__trigger').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+  });
 
   // reveal on scroll, staggered (also drives the GLOW M7 entrance)
   const revealables = document.querySelectorAll('.reveal-line, .reveal-fade, #glowm7Name');
