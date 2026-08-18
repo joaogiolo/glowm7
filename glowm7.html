@@ -144,6 +144,11 @@
     .premium-cta__label{padding:0 22px; flex:1;}
   }
 
+  .section-cta{display:flex; justify-content:center; margin-top:56px;}
+  @media (max-width:640px){
+    .section-cta{width:100%;}
+  }
+
   /* navbar */
   .navbar{
     position:fixed; inset-inline:0; top:0; z-index:50;
@@ -877,6 +882,13 @@
         </div>
       </div>
     </div>
+
+    <div class="section-cta reveal-fade">
+      <a href="https://pay.cakto.com.br/xghj6j4" class="premium-cta" target="_blank" rel="noopener">
+        <span class="premium-cta__label">QUERO ACESSAR O MÉTODO COMPLETO</span>
+        <span class="premium-cta__icon" aria-hidden="true">↗</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -894,7 +906,7 @@
     <div class="results-grid">
       <figure class="transformation reveal-fade">
         <div class="transformation__media">
-          <img src="assets/results/01-transformacao.jpg" alt="Transformação 01 — antes e depois"
+          <img src="assets/results/01-transformacao.jpg" alt="Transformação 01 — antes e depois" loading="lazy" decoding="async"
                onerror="this.style.display='none'; this.parentElement.querySelector('.transformation__placeholder').style.display='flex';">
           <div class="transformation__placeholder">[ ANTES / DEPOIS — assets/results/01 ]</div>
         </div>
@@ -903,7 +915,7 @@
 
       <figure class="transformation reveal-fade">
         <div class="transformation__media">
-          <img src="assets/results/02-transformacao.jpg" alt="Transformação 02 — antes e depois"
+          <img src="assets/results/02-transformacao.jpg" alt="Transformação 02 — antes e depois" loading="lazy" decoding="async"
                onerror="this.style.display='none'; this.parentElement.querySelector('.transformation__placeholder').style.display='flex';">
           <div class="transformation__placeholder">[ ANTES / DEPOIS — assets/results/02 ]</div>
         </div>
@@ -912,19 +924,26 @@
 
       <figure class="transformation reveal-fade">
         <div class="transformation__media">
-          <img src="assets/results/03-transformacao.jpg" alt="Transformação 03 — antes e depois"
+          <img src="assets/results/03-transformacao.jpg" alt="Transformação 03 — antes e depois" loading="lazy" decoding="async"
                onerror="this.style.display='none'; this.parentElement.querySelector('.transformation__placeholder').style.display='flex';">
           <div class="transformation__placeholder">[ ANTES / DEPOIS — assets/results/03 ]</div>
         </div>
         <div class="transformation__caption">Aluno <span>03</span></div>
       </figure>
     </div>
+
+    <div class="section-cta reveal-fade">
+      <a href="https://pay.cakto.com.br/xghj6j4" class="premium-cta" target="_blank" rel="noopener">
+        <span class="premium-cta__label">QUERO OS MESMOS RESULTADOS</span>
+        <span class="premium-cta__icon" aria-hidden="true">↗</span>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- ============ BANNER ZARIEL — RESPIRO ============ -->
 <section class="brand-banner no-image" id="bannerZariel" style="padding-block:0;">
-  <img class="brand-banner__img" id="bannerImg" src="assets/brand/zariel-banner.png" alt=""
+  <img class="brand-banner__img" id="bannerImg" src="assets/brand/zariel-banner.jpg" alt="" loading="lazy" decoding="async"
        style="display:none;"
        onload="this.style.display='block'; this.closest('.brand-banner').classList.remove('no-image');"
        onerror="this.remove();">
@@ -962,6 +981,13 @@
         <span>Você sabe que poderia evoluir, mas não sabe qual deve ser o próximo passo.</span>
       </div>
     </div>
+
+    <div class="section-cta reveal-fade">
+      <a href="https://pay.cakto.com.br/xghj6j4" class="premium-cta" target="_blank" rel="noopener">
+        <span class="premium-cta__label">QUERO SAIR DESSE CICLO</span>
+        <span class="premium-cta__icon" aria-hidden="true">↗</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -969,9 +995,9 @@
 <section class="mentor">
   <div class="wrap">
     <div class="mentor__media reveal-fade">
-      <img src="assets/mentor/mentor-about.png" alt="Mentor GLOW M7"
+      <img src="assets/mentor/mentor-about.jpg" alt="Mentor GLOW M7" loading="lazy" decoding="async"
            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="mentor__placeholder" style="display:none;">[ FOTOGRAFIA DO MENTOR — assets/mentor/mentor-about.png ]</div>
+      <div class="mentor__placeholder" style="display:none;">[ FOTOGRAFIA DO MENTOR — assets/mentor/mentor-about.jpg ]</div>
     </div>
 
     <div class="mentor__copy">
@@ -1153,11 +1179,11 @@
     const test = new Image();
     test.onload = () => {
       document.querySelector('.cta-final').style.backgroundImage =
-        'radial-gradient(circle at 50% 100%, rgba(47,107,255,.30), rgba(6,18,37,.85) 40%, rgba(2,3,7,.92) 75%), url("assets/brand/zariel-banner.png")';
+        'radial-gradient(circle at 50% 100%, rgba(47,107,255,.30), rgba(6,18,37,.85) 40%, rgba(2,3,7,.92) 75%), url("assets/brand/zariel-banner.jpg")';
       document.querySelector('.cta-final').style.backgroundSize = 'cover';
       document.querySelector('.cta-final').style.backgroundPosition = 'center';
     };
-    test.src = 'assets/brand/zariel-banner.png';
+    test.src = 'assets/brand/zariel-banner.jpg';
   })();
 
   // video fallback if source fails to load/play
