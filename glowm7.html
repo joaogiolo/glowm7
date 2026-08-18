@@ -1331,12 +1331,12 @@
       answer: "O ritmo de evolução varia de acordo com o ponto de partida, a rotina e, principalmente, a consistência de cada aluno. Algumas mudanças de apresentação, estilo e hábitos podem ser percebidas mais rapidamente, enquanto outras exigem continuidade. O objetivo do GLOW M7 é fornecer uma estrutura prática para que você evolua de forma consistente, sem depender de tentativas aleatórias."
     },
     {
-      question: "Preciso já entender sobre estética ou imagem masculina?",
+      question: "Preciso já entender sobre estética, autocuidado ou construção de imagem?",
       answer: "Não. O método foi organizado para que você consiga compreender o processo mesmo começando sem conhecimento prévio sobre estética, estilo ou construção de imagem. O conteúdo apresenta uma direção estruturada para que você saiba o que observar, o que priorizar e como aplicar cada etapa à sua realidade."
     },
     {
-      question: "O GLOW M7 serve para qualquer homem?",
-      answer: "O método foi desenvolvido para homens que desejam elevar a própria imagem de maneira mais consciente e estratégica. A proposta não é fazer todos seguirem o mesmo padrão estético, mas oferecer princípios e direcionamentos que possam ser adaptados às características, objetivos e identidade de cada aluno."
+      question: "O GLOW M7 também pode ser aplicado por mulheres?",
+      answer: "Sim. O GLOW M7 também pode ser aplicado por mulheres. Embora parte da comunicação e da identidade visual do método tenha uma presença predominantemente masculina, os princípios ensinados não são exclusivos para homens.\n\nOs fundamentos de estética, autocuidado, construção de imagem, estilo, hábitos e presença podem ser adaptados e aplicados por mulheres de acordo com suas próprias características, objetivos e identidade.\n\nA proposta do GLOW M7 não é estabelecer um único padrão de aparência, mas apresentar princípios e estratégias que ajudem cada pessoa a identificar seus pontos de evolução e desenvolver uma imagem mais cuidada, coerente e intencional."
     },
     {
       question: "Vou precisar gastar muito dinheiro para aplicar o método?",
@@ -1380,7 +1380,7 @@
       </button>
       <div class="faq-item__panel" id="faqPanel${i}" role="region" aria-labelledby="faqTrigger${i}">
         <div class="faq-item__panel-inner">
-          <p class="faq-item__answer">${f.answer}</p>
+          ${f.answer.split('\n\n').map(p => `<p class="faq-item__answer">${p}</p>`).join('')}
         </div>
       </div>
     </div>`;
