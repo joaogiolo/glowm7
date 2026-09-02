@@ -5,6 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZARIEL — GLOW M7</title>
 <meta name="description" content="GLOW M7 por ZARIEL — método de transformação, imagem e presença masculina.">
+<script>
+  /*
+   * Detecção leve de automação (Puppeteer/Selenium/Playwright/PhantomJS).
+   * Isto NÃO bloqueia scrapers HTTP simples (curl, requests, Scrapy) —
+   * esses nunca executam este script, porque não rodam JavaScript.
+   * Serve apenas para sinalizar navegadores automatizados que renderizam
+   * a página de verdade. A defesa real de banda é feita na borda
+   * (Cloudflare/Vercel Firewall), não aqui.
+   */
+  (function () {
+    "use strict";
+    try {
+      var flags = [];
+
+      if (navigator.webdriver === true) flags.push("webdriver");
+
+      var ua = navigator.userAgent || "";
+      if (/HeadlessChrome|Headless|PhantomJS|Puppeteer|Playwright|Selenium/i.test(ua)) {
+        flags.push("ua-signature");
+      }
+
+      // Chrome "de verdade" sempre expõe window.chrome; builds headless antigos não.
+      var looksLikeChrome = /Chrome\//.test(ua) && !/Edg\/|OPR\//.test(ua);
+      if (looksLikeChrome && typeof window.chrome === "undefined") flags.push("missing-chrome-object");
+
+      // Navegador real quase nunca tem 0 plugins nem 0 idiomas configurados.
+      if (navigator.plugins && navigator.plugins.length === 0) flags.push("no-plugins");
+      if (!navigator.languages || navigator.languages.length === 0) flags.push("no-languages");
+
+      if (flags.length > 0) {
+        document.documentElement.setAttribute("data-automation-suspect", flags.join(","));
+      }
+    } catch (e) {
+      // silencioso — nunca deixar isso quebrar o carregamento da página
+    }
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
